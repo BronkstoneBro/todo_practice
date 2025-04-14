@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Tag List</h2>
+    <a href="{% url 'todo_list:tag_create' %}" class="btn btn-primary">
+      <i class="fas fa-plus"></i> Add New Tag
+    </a>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th>Tag Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for tag in tag_list %}
+          <tr>
+            <td>{{ tag.name }}</td>
+            <td>
+              <div class="btn-group">
+                <a href="{% url 'todo_list:tag_update' tag.pk %}" class="btn btn-sm btn-primary">Edit</a>
+                <a href="{% url 'todo_list:tag_delete' tag.pk %}" class="btn btn-sm btn-danger">Delete</a>
+              </div>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
