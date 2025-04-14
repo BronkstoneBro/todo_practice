@@ -20,7 +20,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-@)!pa$q!(^!r(7smh3%!!3hig359fe85ybng9zvd=g-2y=zmuj"
+SECRET_KEY = (
+    "django-insecure-@)!pa$q!(^!r(7smh3%!!3hig359fe85ybng9zvd=g-2y=zmuj"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -127,4 +129,3 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
-
